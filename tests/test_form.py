@@ -1,5 +1,6 @@
-import allure
 from pathlib import Path
+
+import allure
 
 from pages.registration_page import registration_page
 
