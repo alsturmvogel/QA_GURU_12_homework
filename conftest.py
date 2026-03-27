@@ -1,8 +1,10 @@
 import pytest
+from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-@pytest.fixture(scope='function')
+
+@pytest.fixture(scope='function', autouse=True)
 def setup_browser():
     options = Options()
     options.set_capability("browserName", "chrome")
@@ -17,5 +19,8 @@ def setup_browser():
         options=options
     )
 
-    yield driver
+    browser.config.driver = driver
+
+    yield
+
     driver.quit()
