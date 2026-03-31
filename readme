@@ -1,0 +1,17 @@
+Запустить локально
+pytest tests \
+  --base_url=https://demoqa.com \
+  --browser_name=chrome \
+  --headless=false \
+  --window_width=1920 \
+  --window_height=1080
+
+  Запустить удаленно
+  pytest tests \
+  --base_url=https://demoqa.com \
+  --remote_url=selenoid.autotests.cloud \
+  --browser_name=chrome \
+  --browser_version=127.0 \
+  --headless=false \
+  --window_width=1920 \
+  --window_height=1080
